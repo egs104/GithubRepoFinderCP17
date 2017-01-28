@@ -20,7 +20,7 @@ class RepoCell: UITableViewCell {
     var repo: GithubRepo! {
         didSet {
             titleLabel.text = repo.name
-            repoImageView.setImageWithURL(NSURL(string: repo.ownerAvatarURL!)!)
+            repoImageView.setImageWith(URL(string: repo.ownerAvatarURL!)!)
             authorLabel.text = repo.ownerHandle
             starCountLabel.text = "\(repo.stars!)"
             forkCountLabel.text = "\(repo.forks!)"
@@ -34,7 +34,7 @@ class RepoCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
