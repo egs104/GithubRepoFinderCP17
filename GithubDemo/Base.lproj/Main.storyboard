@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kcP-vE-O7S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kcP-vE-O7S">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="187"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iIE-fp-ZLE" id="kxW-ie-Ndo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="186.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Repo Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySn-2n-9mf">
@@ -135,7 +135,7 @@
                     <navigationItem key="navigationItem" id="x5q-EH-pP8">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="6SK-gx-iOD">
                             <connections>
-                                <segue destination="Jk1-yl-KWa" kind="presentation" id="ojC-pH-ddn"/>
+                                <segue destination="I2E-1r-pkz" kind="presentation" id="ajw-Jg-8Gu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -148,58 +148,62 @@
             <point key="canvasLocation" x="818.5" y="-557.5"/>
         </scene>
         <!--Search Settings View Controller-->
-        <scene sceneID="ewz-Qp-V9A">
+        <scene sceneID="RjI-Gg-CZk">
             <objects>
-                <viewController id="oEh-gq-2BW" customClass="SearchSettingsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="I6P-IZ-31K" customClass="SearchSettingsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bKo-5F-PTT"/>
-                        <viewControllerLayoutGuide type="bottom" id="cOQ-Eo-QDw"/>
+                        <viewControllerLayoutGuide type="top" id="Z7z-hZ-cAW"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Uu-d8-Grd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3wL-0V-dm9">
+                    <view key="view" contentMode="scaleToFill" id="dDD-e9-UWK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4eZ-VN-KQB">
-                                <rect key="frame" x="145" y="93" width="160" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FX0-Te-2EB">
+                                <rect key="frame" x="145" y="91" width="160" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderDidChange:" destination="I6P-IZ-31K" eventType="valueChanged" id="V9q-Nm-Vzj"/>
+                                </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minimum Stars:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUE-oT-w20">
-                                <rect key="frame" x="20" y="97" width="119" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minimum Stars:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKc-P6-7Cj">
+                                <rect key="frame" x="20" y="94" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8O-7o-AQT">
-                                <rect key="frame" x="344" y="97" width="11" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jg-ba-baX">
+                                <rect key="frame" x="311" y="94" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TSL-E7-F6T">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Knd-hb-hfE">
+                    <navigationItem key="navigationItem" id="MC1-zR-6uQ">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="85G-2z-R64">
                             <connections>
-                                <action selector="cancelSettings:" destination="oEh-gq-2BW" id="yIj-Ij-xNF"/>
+                                <action selector="cancelButtonTapped:" destination="I6P-IZ-31K" id="v80-96-vW3"/>
+                                <segue destination="vXZ-lx-hvc" kind="show" id="BNY-O4-Iyb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="FHj-u1-xna">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="2Uk-gq-IW5">
                             <connections>
-                                <action selector="saveSettings:" destination="oEh-gq-2BW" id="5h2-B1-7ke"/>
+                                <action selector="saveButtonTapped:" destination="I6P-IZ-31K" id="YT2-pc-uYz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="minStarsLabel" destination="y8O-7o-AQT" id="Cad-hh-ckm"/>
-                        <outlet property="minStarsSlider" destination="4eZ-VN-KQB" id="ze8-mj-oNP"/>
+                        <outlet property="minStarSlider" destination="FX0-Te-2EB" id="kXF-7E-xLc"/>
+                        <outlet property="minStarValue" destination="7Jg-ba-baX" id="ugd-DM-96r"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Hw-k6-fES" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaC-ev-fxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1705.5" y="-557.5"/>
+            <point key="canvasLocation" x="2176.8000000000002" y="-558.17091454272872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FpP-oR-azb">
@@ -220,26 +224,29 @@
             <point key="canvasLocation" x="132" y="-557"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Alm-9D-RF9">
+        <scene sceneID="Pji-de-1aY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jk1-yl-KWa" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I2E-1r-pkz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lbc-G0-tY1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g3f-7S-v7H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="oEh-gq-2BW" kind="relationship" relationship="rootViewController" id="eTT-qw-LHt"/>
+                        <segue destination="I6P-IZ-31K" kind="relationship" relationship="rootViewController" id="OB1-MH-p08"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YVT-Fv-ULW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7E-Py-j5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937" y="-1247"/>
+            <point key="canvasLocation" x="1512.8" y="-557.27136431784118"/>
         </scene>
     </scenes>
     <resources>
         <image name="fork" width="18" height="24"/>
         <image name="star" width="21" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BNY-O4-Iyb"/>
+    </inferredMetricsTieBreakers>
 </document>
